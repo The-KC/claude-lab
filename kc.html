@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KC 藍凱西</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* 配色取自 yasdesignstudio.com/sport：深黑底、米白字、珊瑚紅重點色 */
+    --ink: #f3efe9;
+    --muted: #9a958f;
+    --accent: #ff7677;
+    --pop: #ff7677;
+    --line: rgba(255, 255, 255, 0.1);
+    --card: rgba(20, 20, 20, 0.82);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { min-height: 100%; }
+  body {
+    /* 英文用 Zapf Humanist BT（沒裝就用 Mac 內建的 Optima，同一個字型設計），中文用明體 */
+    font-family: "ZapfHumnst BT", "Zapf Humanist 601 BT", "Zapf Humanist", Optima, "Noto Serif TC", "Songti TC", "PMingLiU", serif;
+    color: var(--ink);
+    /* 近黑底，右上一抹珊瑚紅光暈，呼應網站的暗色氛圍 */
+    background:
+      radial-gradient(ellipse at 85% 0%, rgba(255, 107, 71, 0.22) 0%, transparent 55%),
+      radial-gradient(ellipse at 0% 100%, rgba(255, 118, 119, 0.08) 0%, transparent 50%),
+      linear-gradient(160deg, #1a1a1a 0%, #0a0a0a 100%);
+    background-color: #0a0a0a;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 16px;
+    line-height: 1.85;
+  }
+  main {
+    width: 100%;
+    max-width: 580px;
+    background: var(--card);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid #2a2a2a;
+    border-top: 2px solid var(--accent);
+    border-radius: 4px;
+    padding: 56px 48px;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+  }
+  .label, h2 {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.4em;
+    color: var(--muted);
+  }
+  .label { margin-bottom: 12px; }
+  h2 { margin-bottom: 16px; }
+  h1 {
+    font-weight: 500;
+    font-size: 44px;
+    letter-spacing: 0.1em;
+    line-height: 1.25;
+  }
+  h1 .sep { font-weight: 300; color: var(--muted); margin: 0 0.15em; }
+  .handle {
+    display: inline-block;
+    margin-top: 4px;
+    color: var(--accent);
+    letter-spacing: 0.08em;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+  }
+  .handle:hover { border-bottom-color: currentColor; }
+  .bio {
+    margin-top: 24px;
+    font-size: 17px;
+    letter-spacing: 0.05em;
+  }
+  .bio-en {
+    margin-top: 10px;
+    font-size: 15px;
+    color: var(--muted);
+    letter-spacing: 0.01em;
+    line-height: 1.65;
+  }
+  hr {
+    border: none;
+    border-top: 1px solid var(--line);
+    margin: 36px 0;
+  }
+  .tags { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; }
+  .tags li {
+    font-size: 15px;
+    letter-spacing: 0.1em;
+    padding: 4px 16px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.04);
+  }
+  .note { color: var(--muted); font-size: 15px; margin-bottom: 16px; }
+  .path { list-style: none; position: relative; padding-left: 22px; }
+  .path::before {
+    content: "";
+    position: absolute;
+    left: 5px; top: 10px; bottom: 10px;
+    border-left: 1px solid var(--line);
+  }
+  .path li { position: relative; font-size: 15px; letter-spacing: 0.06em; padding: 3px 0; }
+  .path li::before {
+    content: "";
+    position: absolute;
+    left: -21px; top: 50%;
+    width: 9px; height: 9px;
+    margin-top: -4.5px;
+    border-radius: 50%;
+    background: #141414;
+    border: 1px solid var(--accent);
+  }
+  .path li:last-child { font-weight: 700; color: var(--accent); }
+  .path li:last-child::before { background: var(--accent); }
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    text-align: center;
+  }
+  .stat b {
+    display: block;
+    font-size: 34px;
+    font-weight: 900;
+    color: var(--pop);
+    line-height: 1.2;
+    font-variant-numeric: tabular-nums;
+  }
+  .stat span { font-size: 13px; letter-spacing: 0.15em; color: var(--muted); }
+  .link {
+    display: inline-block;
+    margin-top: 32px;
+    color: var(--pop);
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    border-bottom: 1px solid currentColor;
+    padding-bottom: 2px;
+  }
+  .link:hover { color: var(--accent); }
+  @media (max-width: 480px) {
+    main { padding: 40px 26px; }
+    h1 { font-size: 34px; }
+    .stat b { font-size: 26px; }
+    .stat span { letter-spacing: 0.05em; }
+  }
+</style>
+</head>
+<body>
+  <main>
+    <p class="label">介 紹</p>
+    <h1>KC<span class="sep">｜</span>藍凱西</h1>
+    <a class="handle" href="https://www.instagram.com/thekathylan/" target="_blank" rel="noopener">@thekathylan</a>
+    <p class="bio">白天是接案的資深視覺設計，週末是場邊追賽程的兩寶媽；住彰化，偶爾也去學校代課。</p>
+    <p class="bio-en" lang="en">Freelance senior visual designer by day, sideline soccer mom of two on weekends. Based in Changhua, Taiwan; occasional substitute teacher.</p>
+
+    <hr>
+
+    <h2>興 趣</h2>
+    <ul class="tags">
+      <li>旅遊</li>
+      <li>登山</li>
+      <li>探索</li>
+      <li>咖啡</li>
+      <li>足球粉絲</li>
+    </ul>
+
+    <hr>
+
+    <h2>行 業 歷 程</h2>
+    <p class="note">1.5 年沒上班</p>
+    <ol class="path">
+      <li>百貨公司平面設計</li>
+      <li>學校網管美編</li>
+      <li>網站設計公司</li>
+      <li>品牌設計公司</li>
+      <li>貿易製造業</li>
+      <li>開公司／自由接案</li>
+    </ol>
+
+    <hr>
+
+    <h2>作 品 累 積</h2>
+    <div class="stats">
+      <div class="stat"><b>99+</b><span>品牌設計</span></div>
+      <div class="stat"><b>99+</b><span>包裝設計</span></div>
+      <div class="stat"><b>49+</b><span>網站設計</span></div>
+    </div>
+
+    <a class="link" href="https://yasdesignstudio.com/sport/" target="_blank" rel="noopener">做過的一些運動視覺 →</a>
+  </main>
+</body>
+</html>

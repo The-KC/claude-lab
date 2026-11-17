@@ -1,0 +1,728 @@
+<!doctype html>
+<html lang="zh-Hant-TW" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>小火箭 / 炫風足球俱樂部｜3–5 歲・6–8 歲・大小孩班｜預約免費體驗</title>
+  <meta name="description" content="小火箭隊與炫風隊都開設 3–5 歲、6–8 歲與大小孩班。遠離 3C 平板、團隊品格教育、安全趣味引導。練球場地：大里運動公園、南區健康公園。立即預約免費體驗課！">
+  <meta property="og:title" content="小火箭 / 炫風足球俱樂部｜把電力留在草地上！">
+  <meta property="og:description" content="3–5 歲、6–8 歲、大小孩班，週末帶孩子到草地痛快放電。">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+  <script>document.documentElement.classList.add('js')</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- 正式上線前建議改用 Tailwind CLI 編譯，CDN 版主要供開發與預覽 -->
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            /* 配色比例目標：黑 40%、紅 30%、白 20%，其餘為照片與中性灰 */
+            brand: { 300: '#FF7A7F', 500: '#D6101E', 600: '#B00C18' },
+            ink: { DEFAULT: '#0B0B0D', 800: '#18181C', 700: '#2A2A30' },
+            mist: '#F4F4F5'
+          },
+          fontFamily: {
+            sans: ['"Noto Sans TC"', 'system-ui', 'sans-serif'],
+            num: ['"Barlow Condensed"', '"Noto Sans TC"', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-padding-top: 5.5rem; }
+    body { -webkit-text-size-adjust: 100%; letter-spacing: .015em; }
+    h1, h2, h3 { text-wrap: balance; }
+    p { text-wrap: pretty; }
+    :focus-visible { outline: 3px solid #D6101E; outline-offset: 2px; box-shadow: 0 0 0 2px #fff; }
+
+    /* 區塊小標：短線＋文字 */
+    .eyebrow { display: flex; align-items: center; gap: .75rem; font-weight: 700; font-size: .95rem; letter-spacing: .08em; }
+    .eyebrow::before { content: ""; width: 1.75rem; height: 3px; border-radius: 2px; background: currentColor; }
+
+    /* 圖片載入失敗時仍保有色塊 */
+    .photo { background: linear-gradient(135deg, #2A2A30, #0B0B0D); }
+
+    /* 卡片懸停 */
+    .card-lift { transition: transform .2s ease, box-shadow .2s ease; }
+    .card-lift:hover { transform: translateY(-4px); box-shadow: 0 18px 40px -20px rgba(0,0,0,.55); }
+
+    /* 捲動淡入：只在 JS 可用時生效，避免內容被藏住 */
+    .js .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+    .js .reveal.in { opacity: 1; transform: none; }
+
+    /* FAQ 展開收合 */
+    .faq-panel { display: grid; grid-template-rows: 1fr; transition: grid-template-rows .28s ease; }
+    .js .faq-panel { grid-template-rows: 0fr; }
+    .js .faq-item.open .faq-panel { grid-template-rows: 1fr; }
+    .faq-panel > div { overflow: hidden; }
+    .faq-icon { transition: transform .28s ease; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+    /* 表單 */
+    .field { width: 100%; min-height: 3.25rem; border-radius: .875rem; border: 2px solid transparent; background: #F4F4F5; padding: .75rem 1rem; font-size: 1rem; transition: border-color .15s ease, background-color .15s ease; }
+    .field:hover { border-color: rgba(11,11,13,.2); }
+    .field:focus { border-color: #0B0B0D; background: #fff; outline: none; box-shadow: none; }
+    .field[aria-invalid="true"] { border-color: #B00C18; background: #fff; }
+    .field-error { display: none; }
+    .field-error.show { display: block; }
+
+    .cta { transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease, border-color .15s ease; }
+    .cta:hover { transform: translateY(-2px); }
+    .cta:active { transform: translateY(0); }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto !important; }
+      .js .reveal { opacity: 1; transform: none; transition: none; }
+      .faq-panel, .faq-icon, .cta, .card-lift, .field { transition: none; }
+      .cta:hover, .card-lift:hover { transform: none; }
+    }
+  </style>
+</head>
+
+<body class="bg-ink font-sans text-[17px] text-ink antialiased pb-20 lg:pb-0">
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-lg focus:bg-white focus:px-4 focus:py-2">跳到主要內容</a>
+
+  <!-- ===== 1. 導航列 ===== -->
+  <header id="navbar" class="sticky top-0 z-50 border-b border-white/10 bg-ink/95 text-white backdrop-blur">
+    <nav class="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6" aria-label="主選單">
+      <a href="#top" class="flex min-w-0 items-center gap-2.5">
+        <span aria-hidden="true" class="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-brand-500 text-xl">🚀</span>
+        <span class="truncate text-[15px] font-black leading-tight sm:text-base">小火箭 / 炫風<span class="hidden sm:inline">足球俱樂部</span><span class="block text-xs font-medium text-white/70 sm:hidden">足球俱樂部</span></span>
+      </a>
+
+      <div class="hidden items-center gap-6 text-[15px] font-medium text-white/85 lg:flex">
+        <a class="transition-colors hover:text-brand-300" href="#about">俱樂部理念</a>
+        <a class="transition-colors hover:text-brand-300" href="#programs">班別介紹</a>
+        <a class="transition-colors hover:text-brand-300" href="#schedule">練球場地與時間</a>
+        <a class="transition-colors hover:text-brand-300" href="#pricing">收費與制度</a>
+        <a class="transition-colors hover:text-brand-300" href="#faq">常見問題</a>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <a href="#book" class="cta hidden rounded-full bg-brand-500 px-5 py-2.5 text-sm font-bold text-white hover:bg-brand-600 sm:inline-block">預約免費體驗</a>
+        <button id="menuBtn" type="button" class="grid h-11 w-11 place-items-center rounded-full border border-white/20 lg:hidden" aria-expanded="false" aria-controls="mobileMenu" aria-label="開啟選單">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 5h14M3 10h14M3 15h14"/></svg>
+        </button>
+      </div>
+    </nav>
+
+    <div id="mobileMenu" class="hidden border-t border-white/10 bg-ink px-4 pb-4 lg:hidden">
+      <a class="block border-b border-white/10 py-3 font-medium" href="#about">俱樂部理念</a>
+      <a class="block border-b border-white/10 py-3 font-medium" href="#programs">班別介紹</a>
+      <a class="block border-b border-white/10 py-3 font-medium" href="#schedule">練球場地與時間</a>
+      <a class="block border-b border-white/10 py-3 font-medium" href="#pricing">收費與制度</a>
+      <a class="block py-3 font-medium" href="#faq">常見問題</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ===== 2. Hero ===== -->
+    <section id="top" class="relative overflow-hidden bg-ink text-white">
+      <!-- 球場線條 -->
+      <svg class="pointer-events-none absolute inset-0 h-full w-full opacity-[.07]" viewBox="0 0 1200 700" preserveAspectRatio="xMidYMid slice" fill="none" stroke="#fff" stroke-width="3" aria-hidden="true">
+        <rect x="30" y="30" width="1140" height="640" rx="16"/>
+        <path d="M600 30v640"/>
+        <circle cx="600" cy="350" r="110"/>
+        <rect x="30" y="170" width="170" height="360"/>
+        <rect x="1000" y="170" width="170" height="360"/>
+      </svg>
+
+      <div class="relative mx-auto grid max-w-6xl items-center gap-12 px-4 py-14 sm:px-6 lg:grid-cols-[1.1fr_.9fr] lg:gap-16 lg:py-24">
+        <div>
+          <p class="mb-5 inline-block rounded-full bg-brand-500 px-4 py-1.5 text-sm font-bold text-white">3–5 歲・6–8 歲・大小孩班</p>
+          <h1 class="text-[2.35rem] font-black leading-[1.22] sm:text-5xl lg:text-[3.25rem]">
+            把電力留在<span class="text-brand-300">草地上</span>！<br>讓孩子愛上足球的<span class="inline-block">陽光童年</span>
+          </h1>
+          <p class="mt-6 max-w-xl text-lg leading-[1.8] text-white/80">
+            小火箭隊與炫風隊，都依年齡分班教學<br>
+            遠離 3C 平板・團隊品格教育・安全趣味引導
+          </p>
+          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a href="#book" class="cta rounded-full bg-brand-500 px-8 py-4 text-center text-lg font-black text-white hover:bg-brand-600">立即預約體驗課</a>
+            <a href="#programs" class="cta rounded-full border-2 border-white/30 px-8 py-4 text-center text-lg font-bold hover:border-white hover:bg-white/10">了解課程班別</a>
+          </div>
+          <ul class="mt-9 flex flex-wrap gap-2.5 text-[15px] font-medium text-white/90">
+            <li class="rounded-full bg-white/10 px-4 py-2">專業教練團隊</li>
+            <li class="rounded-full bg-white/10 px-4 py-2">分齡安全教學</li>
+            <li class="rounded-full bg-white/10 px-4 py-2">家長口碑推薦</li>
+          </ul>
+        </div>
+
+        <div class="relative mx-auto w-full max-w-lg lg:max-w-none">
+          <div aria-hidden="true" class="absolute -right-2 -top-3 h-full w-full rounded-[2rem] bg-brand-500 sm:-right-4 sm:-top-4"></div>
+          <!-- 替換圖片：俱樂部練球實景（建議 4:3） -->
+          <img class="photo relative aspect-[4/3] w-full rounded-[2rem] object-cover"
+               src="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?w=1000&q=75&auto=format&fit=crop"
+               alt="教練在草地球場上與一群小球員圍圈說明" width="1000" height="750" fetchpriority="high">
+          <p class="absolute -bottom-4 left-3 rounded-2xl bg-white px-4 py-2.5 text-sm font-black text-ink shadow-lg sm:left-[-1rem] sm:text-base">跌倒了，拍拍草屑站起來！</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 3. 痛點與特色 ===== -->
+    <section id="about" class="bg-white py-16 lg:py-24">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
+        <div class="reveal max-w-2xl">
+          <p class="eyebrow text-brand-600">俱樂部理念</p>
+          <h2 class="mt-3 text-3xl font-black leading-[1.3] sm:text-[2.6rem]">爸媽的週末煩惱，<br>草地上都有解</h2>
+        </div>
+
+        <ul class="reveal mt-10 grid gap-5 md:grid-cols-3">
+          <li class="card-lift rounded-3xl bg-brand-500 p-7 text-white">
+            <span class="grid h-14 w-14 place-items-center rounded-2xl bg-white/15 text-3xl" aria-hidden="true">🛋️</span>
+            <h3 class="mt-5 text-xl font-black leading-snug">精力過剩，在家拆房子</h3>
+            <p class="mt-2.5 leading-[1.8]">沙發當跳台、走廊當跑道？把滿滿的電力留在草地上，回家自然安定下來。</p>
+          </li>
+          <li class="card-lift rounded-3xl bg-ink p-7 text-white">
+            <span class="grid h-14 w-14 place-items-center rounded-2xl bg-white/15 text-3xl" aria-hidden="true">📱</span>
+            <h3 class="mt-5 text-xl font-black leading-snug">整天盯著 3C 平板</h3>
+            <p class="mt-2.5 leading-[1.8] text-white/80">比起叫孩子放下螢幕，不如給他一顆球和一群一起追球的朋友。</p>
+          </li>
+          <li class="card-lift rounded-3xl bg-brand-500 p-7 text-white">
+            <span class="grid h-14 w-14 place-items-center rounded-2xl bg-white/15 text-3xl" aria-hidden="true">☀️</span>
+            <h3 class="mt-5 text-xl font-black leading-snug">假日缺乏戶外運動</h3>
+            <p class="mt-2.5 leading-[1.8]">每週固定一段陽光時間，不用再煩惱這週末要帶孩子去哪裡。</p>
+          </li>
+        </ul>
+
+        <div class="reveal mt-16 grid gap-8 lg:grid-cols-[.85fr_1.15fr] lg:gap-14">
+          <div>
+            <h2 class="text-3xl font-black leading-[1.3] sm:text-[2.6rem]">我們教的，<br>不只是踢球</h2>
+            <div class="mt-7 rounded-3xl bg-ink p-7 text-white">
+              <p class="text-lg font-black">每個孩子都能找到自己的位置</p>
+              <p class="mt-2.5 leading-[1.8] text-white/80">無論是外向的 E 型小太陽，還是害羞的 I 型小將，教練都會適性引導，讓孩子安心融入。</p>
+            </div>
+          </div>
+          <ol class="space-y-4">
+            <li class="flex gap-5 rounded-3xl bg-ink-800 p-6 text-white">
+              <span class="font-num text-5xl font-extrabold leading-none text-brand-300" aria-hidden="true">01</span>
+              <div>
+                <h3 class="text-xl font-black leading-snug">安全第一的耐心引導</h3>
+                <p class="mt-1.5 leading-[1.8] text-white/80">依年齡分班、循序安排活動，用孩子聽得懂的方式帶領，不急著要求表現。</p>
+              </div>
+            </li>
+            <li class="flex gap-5 rounded-3xl bg-ink-800 p-6 text-white">
+              <span class="font-num text-5xl font-extrabold leading-none text-brand-300" aria-hidden="true">02</span>
+              <div>
+                <h3 class="text-xl font-black leading-snug">從趣味遊戲中建立品格</h3>
+                <p class="mt-1.5 leading-[1.8] text-white/80">輪流、等待、為隊友加油——團隊合作的道理，都藏在一場場遊戲裡。</p>
+              </div>
+            </li>
+            <li class="flex gap-5 rounded-3xl bg-ink-800 p-6 text-white">
+              <span class="font-num text-5xl font-extrabold leading-none text-brand-300" aria-hidden="true">03</span>
+              <div>
+                <h3 class="text-xl font-black leading-snug">跌倒了拍拍草屑站起來</h3>
+                <p class="mt-1.5 leading-[1.8] text-white/80">輸球、跌倒都是練習的一部分。在草地上一次次站起來，慢慢培養挫折忍受力。</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 4. 課程班別 ===== -->
+    <section id="programs" class="bg-brand-500 py-16 text-white lg:py-24">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
+        <div class="reveal max-w-2xl">
+          <p class="eyebrow">班別介紹</p>
+          <h2 class="mt-3 text-3xl font-black leading-[1.3] sm:text-[2.6rem]">兩支隊伍、三個年齡班，<br>孩子的每一步都接得住</h2>
+          <p class="mt-4 leading-[1.8]">🚀 小火箭隊與 🌪️ 炫風隊都開設以下三個班別，選好年齡班，再選想加入的隊伍。</p>
+        </div>
+
+        <div class="reveal mt-10 grid gap-5 md:grid-cols-3">
+          <article class="card-lift flex flex-col rounded-3xl bg-white p-7 text-ink">
+            <p class="font-num text-6xl font-extrabold leading-none text-brand-500">3–5<span class="ml-1.5 font-sans text-xl font-black">歲</span></p>
+            <h3 class="mt-4 text-2xl font-black">3–5 歲班</h3>
+            <p class="mt-1.5 leading-[1.7] text-ink/75">幼兒啟蒙入門：趣味遊戲、球感探索、安全放電</p>
+            <ul class="mt-5 flex-1 space-y-2.5 border-t border-ink/10 pt-5">
+              <li class="flex items-baseline gap-3"><span aria-hidden="true" class="h-2 w-2 shrink-0 translate-y-[-2px] rounded-full bg-brand-500"></span>球感與身體協調</li>
+              <li class="flex items-baseline gap-3"><span aria-hidden="true" class="h-2 w-2 shrink-0 translate-y-[-2px] rounded-full bg-brand-500"></span>趣味抓尾巴遊戲</li>
+              <li class="flex items-baseline gap-3"><span aria-hidden="true" class="h-2 w-2 shrink-0 translate-y-[-2px] rounded-full bg-brand-500"></span>克服對球的恐懼</li>
+              <li class="flex items-baseline gap-3"><span aria-hidden="true" class="h-2 w-2 shrink-0 translate-y-[-2px] rounded-full bg-brand-500"></span>盡情放電，快樂成長</li>
+            </ul>
+            <div class="mt-6 grid grid-cols-2 gap-2.5">
+              <a href="#book" data-team="小火箭隊" data-group="3–5 歲班" class="cta rounded-full bg-brand-500 py-3 text-center text-[15px] font-black text-white hover:bg-brand-600">預約小火箭</a>
+              <a href="#book" data-team="炫風隊" data-group="3–5 歲班" class="cta rounded-full bg-ink py-3 text-center text-[15px] font-black text-white hover:bg-ink-700">預約炫風</a>
+            </div>
+          </article>
+
+          <article class="card-lift flex flex-col rounded-3xl bg-white p-7 text-ink">
+            <p class="font-num text-6xl font-extrabold leading-none text-brand-500">6–8<span class="ml-1.5 font-sans text-xl font-black">歲</span></p>
+            <h3 class="mt-4 text-2xl font-black">6–8 歲班</h3>
+            <p class="mt-1.5 leading-[1.7] text-ink/75">進階成長：團隊傳控、個人技巧、比賽交流暖身</p>
+            <ul class="mt-5 flex-1 space-y-2.5 border-t border-ink/10 pt-5">
+              <li class="flex items-baseline gap-3"><span aria-hidden="true" class="h-2 w-2 shrink-0 translate-y-[-2px] rounded-full bg-brand-500"></span>基本盤球與繞錐</li>
+              <li class="flex items-baseline gap-3"><span aria-hidden="true" class="h-2 w-2 shrink-0 translate-y-[-2px] rounded-full bg-brand-500"></span>分組對抗賽</li>
+              <li class="flex items-baseline gap-3"><span aria-hidden="true" class="h-2 w-2 shrink-0 translate-y-[-2px] rounded-full bg-brand-500"></span>傳切團隊戰術</li>
+              <li class="flex items-baseline gap-3"><span aria-hidden="true" class="h-2 w-2 shrink-0 translate-y-[-2px] rounded-full bg-brand-500"></span>盃賽交流體驗</li>
+            </ul>
+            <div class="mt-6 grid grid-cols-2 gap-2.5">
+              <a href="#book" data-team="小火箭隊" data-group="6–8 歲班" class="cta rounded-full bg-brand-500 py-3 text-center text-[15px] font-black text-white hover:bg-brand-600">預約小火箭</a>
+              <a href="#book" data-team="炫風隊" data-group="6–8 歲班" class="cta rounded-full bg-ink py-3 text-center text-[15px] font-black text-white hover:bg-ink-700">預約炫風</a>
+            </div>
+          </article>
+
+          <!-- 待填：大小孩班的實際年齡範圍與課程重點 -->
+          <article class="card-lift flex flex-col rounded-3xl bg-white p-7 text-ink">
+            <p class="text-[3.25rem] font-black leading-[3.75rem] text-brand-500">大小孩</p>
+            <h3 class="mt-4 text-2xl font-black">大小孩班</h3>
+            <p class="mt-1.5 leading-[1.7] text-ink/75">給已超過 6–8 歲班年齡的孩子</p>
+            <div class="mt-5 flex-1 border-t border-ink/10 pt-5">
+              <p class="leading-[1.8]">分組方式與課程內容，歡迎洽詢球隊經理。</p>
+              <a data-line href="#" target="_blank" rel="noopener" class="mt-3 inline-block font-bold text-brand-600 underline underline-offset-4">LINE 詢問大小孩班</a>
+            </div>
+            <div class="mt-6 grid grid-cols-2 gap-2.5">
+              <a href="#book" data-team="小火箭隊" data-group="大小孩班" class="cta rounded-full bg-brand-500 py-3 text-center text-[15px] font-black text-white hover:bg-brand-600">預約小火箭</a>
+              <a href="#book" data-team="炫風隊" data-group="大小孩班" class="cta rounded-full bg-ink py-3 text-center text-[15px] font-black text-white hover:bg-ink-700">預約炫風</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 5. 場地、時段、收費 ===== -->
+    <section id="schedule" class="bg-ink py-16 text-white lg:py-24">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
+        <div class="reveal max-w-2xl">
+          <p class="eyebrow text-brand-300">練球場地與時間</p>
+          <h2 class="mt-3 text-3xl font-black leading-[1.3] sm:text-[2.6rem]">每週六、日，草地上見</h2>
+        </div>
+
+        <div class="reveal mt-10 grid gap-5 md:grid-cols-3">
+          <a class="card-lift group rounded-3xl bg-ink-800 p-7 text-white" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E9%87%8C%E9%81%8B%E5%8B%95%E5%85%AC%E5%9C%92">
+            <svg class="text-brand-300" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+            <h3 class="mt-3 text-xl font-black">大里運動公園</h3>
+            <p class="mt-1 text-white/75">人工草皮操場／田徑場</p>
+            <p class="mt-4 text-sm font-bold text-brand-300 group-hover:underline">開啟 Google 地圖 ↗</p>
+          </a>
+          <a class="card-lift group rounded-3xl bg-ink-800 p-7 text-white" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E5%8D%97%E5%8D%80%E5%81%A5%E5%BA%B7%E5%85%AC%E5%9C%92">
+            <svg class="text-brand-300" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>
+            <h3 class="mt-3 text-xl font-black">南區健康公園</h3>
+            <p class="mt-1 text-white/75">戶外練球場地</p>
+            <p class="mt-4 text-sm font-bold text-brand-300 group-hover:underline">開啟 Google 地圖 ↗</p>
+          </a>
+          <div class="rounded-3xl bg-ink-800 p-7 text-white">
+            <svg class="text-brand-300" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>
+            <h3 class="mt-3 text-xl font-black">常態時段：每週六、日</h3>
+            <dl class="mt-3 divide-y divide-white/15">
+              <div class="flex items-baseline justify-between gap-4 py-2"><dt class="text-white/75">上午班</dt><dd class="font-num text-[1.65rem] font-bold leading-none">08:30–10:00</dd></div>
+              <div class="flex items-baseline justify-between gap-4 py-2"><dt class="text-white/75">下午班</dt><dd class="font-num text-[1.65rem] font-bold leading-none">15:00–17:00</dd></div>
+            </dl>
+          </div>
+        </div>
+
+        <div id="pricing" class="reveal mt-14 scroll-mt-24 rounded-[2rem] bg-brand-500 p-7 sm:p-10">
+          <p class="eyebrow">收費與制度</p>
+          <h2 class="mt-3 text-3xl font-black leading-[1.3] sm:text-[2.6rem]">透明公開的季費制，<br>下雨也不吃虧</h2>
+
+          <dl class="mt-8 grid gap-4 sm:grid-cols-3">
+            <div class="flex flex-col-reverse justify-end rounded-2xl bg-ink p-6">
+              <dt class="mt-2 text-white/80">一季約略開課堂數</dt>
+              <dd class="font-num text-6xl font-extrabold leading-none">16–18<span class="ml-1.5 font-sans text-lg font-bold">堂</span></dd>
+            </div>
+            <div class="flex flex-col-reverse justify-end rounded-2xl bg-white p-6 text-ink">
+              <dt class="mt-2 text-ink/75">每季保證堂數</dt>
+              <dd class="font-num text-6xl font-extrabold leading-none text-brand-500">12<span class="ml-1.5 font-sans text-lg font-bold">堂</span></dd>
+            </div>
+            <div class="flex flex-col-reverse justify-end rounded-2xl bg-ink p-6">
+              <dt class="mt-2 text-white/80">超過保證堂數不另收費</dt>
+              <dd class="text-[2rem] font-black leading-[3.75rem]">多上不加收</dd>
+            </div>
+          </dl>
+
+          <div class="mt-8 flex flex-col gap-4 border-t border-white/30 pt-6 sm:flex-row sm:items-center sm:justify-between">
+            <p class="leading-[1.8]">個人請假可彈性跨班補課。<br class="sm:hidden">當季費用與開課日期，歡迎洽詢球隊經理。</p>
+            <a data-line href="#" target="_blank" rel="noopener" class="cta shrink-0 rounded-full bg-white px-6 py-3 text-center font-black text-ink hover:bg-mist">LINE 詢問季費</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 6. 家長回饋與花絮 ===== -->
+    <section id="stories" class="bg-brand-500 py-16 text-white lg:py-24">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6">
+        <div class="reveal max-w-2xl">
+          <p class="eyebrow">家長回饋與花絮</p>
+          <h2 class="mt-3 text-3xl font-black leading-[1.3] sm:text-[2.6rem]">下課之後，<br>爸媽最有感的改變</h2>
+        </div>
+
+        <!-- 替換內容：請換成取得同意的真實家長回饋與署名 -->
+        <div class="reveal mt-10 grid gap-5 md:grid-cols-2">
+          <figure class="rounded-3xl bg-ink p-8 text-white">
+            <blockquote class="text-2xl font-black leading-[1.45]">「孩子回家吃得香、睡得甜。」</blockquote>
+            <figcaption class="mt-3 text-white/75">— 俱樂部家長</figcaption>
+          </figure>
+          <figure class="rounded-3xl bg-ink p-8 text-white">
+            <blockquote class="text-2xl font-black leading-[1.45]">「原本害羞，現在變得很有自信。」</blockquote>
+            <figcaption class="mt-3 text-white/75">— 俱樂部家長</figcaption>
+          </figure>
+        </div>
+
+        <!-- 替換圖片：以下四張為 Unsplash 示意圖，請換成俱樂部實拍（並取得家長肖像同意） -->
+        <div class="reveal mt-5 grid grid-cols-2 gap-3 lg:grid-cols-4">
+          <figure class="relative overflow-hidden rounded-3xl">
+            <img loading="lazy" class="photo aspect-square w-full object-cover" src="https://images.unsplash.com/photo-1575361204480-aadea25e6e68?w=600&q=70&auto=format&fit=crop" alt="草地上的足球（示意圖）" width="600" height="600">
+            <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent px-4 pb-3 pt-8 text-sm font-bold text-white">草地奔跑</figcaption>
+          </figure>
+          <figure class="relative overflow-hidden rounded-3xl">
+            <img loading="lazy" class="photo aspect-square w-full object-cover" src="https://images.unsplash.com/photo-1517927033932-b3d18e61fb3a?w=600&q=70&auto=format&fit=crop" alt="對著球門起腳射門（示意圖）" width="600" height="600">
+            <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent px-4 pb-3 pt-8 text-sm font-bold text-white">射門瞬間</figcaption>
+          </figure>
+          <figure class="relative overflow-hidden rounded-3xl">
+            <img loading="lazy" class="photo aspect-square w-full object-cover" src="https://images.unsplash.com/photo-1526232761682-d26e03ac148e?w=600&q=70&auto=format&fit=crop&crop=center" alt="教練與小球員在場上互動（示意圖）" width="600" height="600">
+            <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent px-4 pb-3 pt-8 text-sm font-bold text-white">教練蹲下擊掌</figcaption>
+          </figure>
+          <figure class="relative overflow-hidden rounded-3xl">
+            <img loading="lazy" class="photo aspect-square w-full object-cover" src="https://images.unsplash.com/photo-1551958219-acbc608c6377?w=600&q=70&auto=format&fit=crop" alt="草地上排開的足球（示意圖）" width="600" height="600">
+            <figcaption class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent px-4 pb-3 pt-8 text-sm font-bold text-white">喝水燦笑</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 7. 預約表單 ===== -->
+    <section id="book" class="bg-ink py-16 lg:py-24">
+      <div class="mx-auto grid max-w-6xl gap-10 px-4 sm:px-6 lg:grid-cols-[.85fr_1.15fr] lg:gap-14">
+        <div class="reveal text-white">
+          <h2 class="text-3xl font-black leading-[1.3] sm:text-[2.75rem]">帶孩子來草地上<br>試一堂吧！</h2>
+          <p class="mt-4 text-lg font-medium leading-[1.8]">填好資料，或直接加球隊經理 LINE，一對一幫您登記體驗時段。</p>
+          <ol class="mt-7 space-y-3.5 font-bold">
+            <li class="flex items-center gap-3"><span class="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-brand-500 font-num text-lg text-white">1</span>填寫預約資料</li>
+            <li class="flex items-center gap-3"><span class="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-brand-500 font-num text-lg text-white">2</span>透過 LINE 傳給球隊經理</li>
+            <li class="flex items-center gap-3"><span class="grid h-9 w-9 shrink-0 place-items-center rounded-xl bg-brand-500 font-num text-lg text-white">3</span>穿上運動服鞋，草地見！</li>
+          </ol>
+          <a data-line href="#" target="_blank" rel="noopener" class="cta mt-8 inline-block rounded-full bg-brand-500 px-7 py-4 text-center font-black text-white hover:bg-brand-600">直接加球隊經理 LINE</a>
+        </div>
+
+        <div class="reveal rounded-[2rem] bg-white p-6 text-ink sm:p-8">
+          <form id="bookingForm" novalidate>
+            <h3 class="text-2xl font-black">預約免費體驗課</h3>
+            <div class="mt-6 grid gap-4 sm:grid-cols-2">
+              <div>
+                <label for="parent" class="mb-1.5 block text-[15px] font-bold">家長稱呼</label>
+                <input id="parent" name="parent" type="text" autocomplete="name" placeholder="例：王媽媽" aria-describedby="parent-err" class="field">
+                <p id="parent-err" class="field-error mt-1 text-sm font-medium text-brand-600">請填寫家長稱呼</p>
+              </div>
+              <div>
+                <label for="phone" class="mb-1.5 block text-[15px] font-bold">聯絡電話</label>
+                <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="例：0912-345-678" aria-describedby="phone-err" class="field">
+                <p id="phone-err" class="field-error mt-1 text-sm font-medium text-brand-600">請填寫正確的電話號碼（例：0912345678）</p>
+              </div>
+              <div>
+                <label for="child" class="mb-1.5 block text-[15px] font-bold">小朋友姓名</label>
+                <input id="child" name="child" type="text" autocomplete="off" placeholder="例：小明" aria-describedby="child-err" class="field">
+                <p id="child-err" class="field-error mt-1 text-sm font-medium text-brand-600">請填寫小朋友姓名</p>
+              </div>
+              <div>
+                <label for="age" class="mb-1.5 block text-[15px] font-bold">小朋友年齡</label>
+                <select id="age" name="age" aria-describedby="age-err age-hint" class="field">
+                  <option value="">請選擇</option>
+                  <option value="3">3 歲</option><option value="4">4 歲</option><option value="5">5 歲</option>
+                  <option value="6">6 歲</option><option value="7">7 歲</option><option value="8">8 歲</option>
+                  <option value="big">超過 8 歲</option>
+                </select>
+                <p id="age-err" class="field-error mt-1 text-sm font-medium text-brand-600">請選擇小朋友年齡</p>
+                <p id="age-hint" class="mt-1 text-sm font-bold text-brand-600" aria-live="polite"></p>
+              </div>
+              <div>
+                <label for="team" class="mb-1.5 block text-[15px] font-bold">想加入的隊伍</label>
+                <select id="team" name="team" aria-describedby="team-err" class="field">
+                  <option value="">請選擇</option>
+                  <option>小火箭隊</option>
+                  <option>炫風隊</option>
+                </select>
+                <p id="team-err" class="field-error mt-1 text-sm font-medium text-brand-600">請選擇隊伍</p>
+              </div>
+              <div>
+                <label for="venue" class="mb-1.5 block text-[15px] font-bold">體驗場地</label>
+                <select id="venue" name="venue" aria-describedby="venue-err" class="field">
+                  <option value="">請選擇</option>
+                  <option>大里運動公園</option>
+                  <option>南區健康公園</option>
+                </select>
+                <p id="venue-err" class="field-error mt-1 text-sm font-medium text-brand-600">請選擇體驗場地</p>
+              </div>
+              <div class="sm:col-span-2">
+                <label for="slot" class="mb-1.5 block text-[15px] font-bold">預約體驗時段</label>
+                <select id="slot" name="slot" aria-describedby="slot-err" class="field">
+                  <option value="">請選擇</option>
+                  <option>週六上午班（08:30–10:00）</option>
+                  <option>週六下午班（15:00–17:00）</option>
+                  <option>週日上午班（08:30–10:00）</option>
+                  <option>週日下午班（15:00–17:00）</option>
+                </select>
+                <p id="slot-err" class="field-error mt-1 text-sm font-medium text-brand-600">請選擇體驗時段</p>
+              </div>
+            </div>
+            <button type="submit" class="cta mt-6 w-full rounded-full bg-brand-500 py-4 text-lg font-black text-white hover:bg-brand-600">下一步：透過 LINE 傳給經理</button>
+            <p class="mt-3 text-center text-sm text-ink/65">資料僅用於安排體驗課，不會透過本頁儲存。</p>
+          </form>
+
+          <!-- 表單驗證通過後顯示 -->
+          <div id="bookingDone" class="hidden" tabindex="-1">
+            <p class="text-4xl" aria-hidden="true">🎉</p>
+            <h3 class="mt-2 text-2xl font-black">還差最後一步！</h3>
+            <p class="mt-2 leading-[1.8] text-ink/75">資料還沒有送出。請複製下方內容，貼到 LINE 傳給球隊經理，就完成登記了。</p>
+            <pre id="bookingText" class="mt-4 whitespace-pre-wrap rounded-2xl bg-mist p-4 font-sans leading-[1.8]"></pre>
+            <button id="copyBtn" type="button" class="cta mt-4 w-full rounded-full bg-brand-500 py-4 text-lg font-black text-white hover:bg-brand-600">複製內容並開啟 LINE</button>
+            <button id="editBtn" type="button" class="mt-3 w-full py-2 font-bold text-ink/70 underline underline-offset-4">返回修改資料</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 8. FAQ ===== -->
+    <section id="faq" class="bg-brand-500 py-16 text-white lg:py-24">
+      <div class="mx-auto max-w-3xl px-4 sm:px-6">
+        <p class="eyebrow">常見問題</p>
+        <h2 class="mt-3 text-3xl font-black leading-[1.3] sm:text-[2.6rem]">第一次來，爸媽常問這些</h2>
+
+        <div class="mt-10 space-y-3">
+          <div class="faq-item open rounded-3xl bg-ink">
+            <h3>
+              <button type="button" class="faq-btn flex w-full items-center justify-between gap-4 rounded-3xl p-6 text-left text-lg font-bold" aria-expanded="true" aria-controls="faq1">
+                初次體驗需要買專業足球鞋嗎？
+                <span class="faq-icon shrink-0 text-2xl leading-none text-brand-300" aria-hidden="true">+</span>
+              </button>
+            </h3>
+            <div id="faq1" class="faq-panel"><div><p class="px-6 pb-6 leading-[1.8] text-white/80">不需要！第一次來，穿好活動的運動服和運動鞋就可以了。等孩子喜歡上足球，再考慮添購裝備也不遲。</p></div></div>
+          </div>
+
+          <div class="faq-item rounded-3xl bg-ink">
+            <h3>
+              <button type="button" class="faq-btn flex w-full items-center justify-between gap-4 rounded-3xl p-6 text-left text-lg font-bold" aria-expanded="false" aria-controls="faq2">
+                小孩很害羞、怕生，可以來嗎？
+                <span class="faq-icon shrink-0 text-2xl leading-none text-brand-300" aria-hidden="true">+</span>
+              </button>
+            </h3>
+            <div id="faq2" class="faq-panel"><div><p class="px-6 pb-6 leading-[1.8] text-white/80">當然可以。無論是外向的 E 型小太陽，還是害羞的 I 型小將，教練都會耐心適性引導，讓孩子用自己的步調透過遊戲慢慢融入團體。</p></div></div>
+          </div>
+
+          <div class="faq-item rounded-3xl bg-ink">
+            <h3>
+              <button type="button" class="faq-btn flex w-full items-center justify-between gap-4 rounded-3xl p-6 text-left text-lg font-bold" aria-expanded="false" aria-controls="faq3">
+                遇到雨天或請假怎麼處理？
+                <span class="faq-icon shrink-0 text-2xl leading-none text-brand-300" aria-hidden="true">+</span>
+              </button>
+            </h3>
+            <div id="faq3" class="faq-panel"><div><p class="px-6 pb-6 leading-[1.8] text-white/80">我們採季費保證機制：一季開課約 16–18 堂，保證 12 堂，多上不加收，即使遇到雨天也有足夠堂數緩衝。個人請假則可以彈性跨班補課。</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== 9. 頁尾 ===== -->
+  <footer class="bg-ink text-white/80">
+    <div class="mx-auto grid max-w-6xl gap-8 px-4 py-14 sm:grid-cols-2 sm:px-6 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
+      <div>
+        <p class="text-lg font-black text-white">🚀 小火箭 / 炫風足球俱樂部</p>
+        <p class="mt-2 leading-[1.8]">把滿滿的電力留在草地上！</p>
+      </div>
+      <nav aria-label="快速連結">
+        <h2 class="font-bold text-white">快速連結</h2>
+        <ul class="mt-3 space-y-2">
+          <li><a class="hover:text-white hover:underline" href="#about">俱樂部理念</a></li>
+          <li><a class="hover:text-white hover:underline" href="#programs">班別介紹</a></li>
+          <li><a class="hover:text-white hover:underline" href="#pricing">收費與制度</a></li>
+          <li><a class="hover:text-white hover:underline" href="#faq">常見問題</a></li>
+        </ul>
+      </nav>
+      <div>
+        <h2 class="font-bold text-white">練球場地</h2>
+        <ul class="mt-3 space-y-2">
+          <li>大里運動公園</li>
+          <li>南區健康公園</li>
+          <li>每週六、日</li>
+        </ul>
+      </div>
+      <div>
+        <h2 class="font-bold text-white">官方社群</h2>
+        <ul class="mt-3 space-y-2">
+          <li><a data-line href="#" target="_blank" rel="noopener" class="hover:text-white hover:underline">LINE</a></li>
+          <li><a data-fb href="#" target="_blank" rel="noopener" class="hover:text-white hover:underline">Facebook</a></li>
+          <li><a data-ig href="#" target="_blank" rel="noopener" class="hover:text-white hover:underline">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="border-t border-white/10 px-4 py-5 text-center text-sm">© 2026 小火箭 / 炫風足球俱樂部 版權所有</p>
+  </footer>
+
+  <!-- 手機版底部常駐 CTA -->
+  <div id="stickyCta" class="fixed inset-x-0 bottom-0 z-40 grid grid-cols-2 gap-2 border-t border-white/10 bg-ink p-3 transition-transform lg:hidden">
+    <a data-line href="#" target="_blank" rel="noopener" class="rounded-full border-2 border-white/40 py-3 text-center font-bold text-white">加 LINE 詢問</a>
+    <a href="#book" class="rounded-full bg-brand-500 py-3 text-center font-black text-white">預約免費體驗</a>
+  </div>
+
+  <script>
+    /* ===== 上線前請修改這裡的連結 ===== */
+    const CONFIG = {
+      line: 'https://line.me/ti/p/~YOUR_LINE_ID',       // 球隊經理 LINE
+      facebook: 'https://www.facebook.com/YOUR_PAGE',   // Facebook 粉專
+      instagram: 'https://www.instagram.com/YOUR_PAGE'  // Instagram
+    };
+
+    document.querySelectorAll('[data-line]').forEach(a => a.href = CONFIG.line);
+    document.querySelectorAll('[data-fb]').forEach(a => a.href = CONFIG.facebook);
+    document.querySelectorAll('[data-ig]').forEach(a => a.href = CONFIG.instagram);
+
+    /* 手機選單 */
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    function setMenu(open) {
+      mobileMenu.classList.toggle('hidden', !open);
+      menuBtn.setAttribute('aria-expanded', open);
+      menuBtn.setAttribute('aria-label', open ? '關閉選單' : '開啟選單');
+    }
+    menuBtn.addEventListener('click', () => setMenu(mobileMenu.classList.contains('hidden')));
+    mobileMenu.addEventListener('click', e => { if (e.target.closest('a')) setMenu(false); });
+
+    /* 捲動淡入 */
+    const reveals = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) { entry.target.classList.add('in'); io.unobserve(entry.target); }
+        });
+      }, { threshold: 0.1 });
+      reveals.forEach(el => io.observe(el));
+    } else {
+      reveals.forEach(el => el.classList.add('in'));
+    }
+
+    /* FAQ：一次展開一題 */
+    document.querySelectorAll('.faq-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const willOpen = !item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(other => {
+          other.classList.remove('open');
+          other.querySelector('.faq-btn').setAttribute('aria-expanded', 'false');
+        });
+        if (willOpen) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    /* 手機底部 CTA：捲到預約區時收起，避免遮住表單 */
+    const stickyCta = document.getElementById('stickyCta');
+    const bookSection = document.getElementById('book');
+    new IntersectionObserver(([entry]) => {
+      stickyCta.style.transform = entry.isIntersecting ? 'translateY(100%)' : '';
+    }).observe(bookSection);
+
+    /* 表單 */
+    const form = document.getElementById('bookingForm');
+    const done = document.getElementById('bookingDone');
+    const bookingText = document.getElementById('bookingText');
+    const copyBtn = document.getElementById('copyBtn');
+    const ageHint = document.getElementById('age-hint');
+
+    const classForAge = age => (age === 'big' ? '大小孩班' : Number(age) <= 5 ? '3–5 歲班' : '6–8 歲班');
+    const validPhone = v => /^(09\d{8}|0\d{8,9})$/.test(v.replace(/[\s()-]/g, ''));
+    const validators = {
+      parent: v => v.trim() !== '',
+      phone: validPhone,
+      child: v => v.trim() !== '',
+      age: v => v !== '',
+      team: v => v !== '',
+      venue: v => v !== '',
+      slot: v => v !== ''
+    };
+
+    function checkField(name) {
+      const field = form.elements[name];
+      const ok = validators[name](field.value);
+      field.setAttribute('aria-invalid', ok ? 'false' : 'true');
+      document.getElementById(name + '-err').classList.toggle('show', !ok);
+      return ok;
+    }
+
+    Object.keys(validators).forEach(name => {
+      const field = form.elements[name];
+      // 離開欄位時才檢查；已標錯的欄位在修正時即時解除
+      field.addEventListener('blur', () => { if (field.value) checkField(name); });
+      field.addEventListener('input', () => { if (field.getAttribute('aria-invalid') === 'true') checkField(name); });
+    });
+
+    form.elements.age.addEventListener('change', e => {
+      ageHint.textContent = e.target.value ? '建議班別：' + classForAge(e.target.value) : '';
+    });
+
+    /* 從班別卡片點進來時，帶入隊伍與班別提示 */
+    document.querySelectorAll('[data-team]').forEach(a => {
+      a.addEventListener('click', () => {
+        const { team, group } = a.dataset;
+        form.elements.team.value = team;
+        if (form.elements.team.getAttribute('aria-invalid') === 'true') checkField('team');
+        // 已選的年齡與點選的班別不符時清空，請家長重選
+        if (form.elements.age.value && classForAge(form.elements.age.value) !== group) form.elements.age.value = '';
+        ageHint.textContent = '您正在預約' + team + '・' + group;
+      });
+    });
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const results = Object.keys(validators).map(name => [name, checkField(name)]);
+      const firstBad = results.find(([, ok]) => !ok);
+      if (firstBad) { form.elements[firstBad[0]].focus(); return; }
+
+      const f = form.elements;
+      bookingText.textContent =
+        '您好，我想預約免費體驗課！\n' +
+        '家長：' + f.parent.value.trim() + '\n' +
+        '電話：' + f.phone.value.trim() + '\n' +
+        '小朋友：' + f.child.value.trim() + '（' + f.age.selectedOptions[0].text + '）\n' +
+        '隊伍：' + f.team.value + '\n' +
+        '建議班別：' + classForAge(f.age.value) + '\n' +
+        '場地：' + f.venue.value + '\n' +
+        '時段：' + f.slot.value;
+
+      form.classList.add('hidden');
+      done.classList.remove('hidden');
+      done.focus();
+    });
+
+    document.getElementById('editBtn').addEventListener('click', () => {
+      done.classList.add('hidden');
+      form.classList.remove('hidden');
+      form.elements.parent.focus();
+    });
+
+    async function copyText(text) {
+      try {
+        await navigator.clipboard.writeText(text);
+        return true;
+      } catch {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        const ok = document.execCommand('copy');
+        ta.remove();
+        return ok;
+      }
+    }
+
+    copyBtn.addEventListener('click', () => {
+      // 先開視窗再複製，避免非同步後被瀏覽器當成彈出視窗擋下
+      window.open(CONFIG.line, '_blank', 'noopener');
+      copyText(bookingText.textContent).then(ok => {
+        copyBtn.textContent = ok ? '✓ 已複製！請到 LINE 貼上傳送' : '請手動選取上方文字複製';
+      });
+    });
+  </script>
+</body>
+</html>
